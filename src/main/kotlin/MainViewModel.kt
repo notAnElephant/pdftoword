@@ -11,6 +11,7 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor
 import org.apache.poi.xwpf.usermodel.XWPFDocument
 import java.io.File
 import java.io.FileInputStream
+import java.io.FileNotFoundException
 import java.util.Locale
 
 data class MainUiState(
@@ -33,6 +34,12 @@ class MainViewModel : ViewModel(){
 	var wordData = mutableStateMapOf<String, String>()
 	var doKeysMatch by mutableStateOf(false)
 	fun readPdfForm(filePath: String){
+
+		if(!File(filePath).exists()){
+			Logger.d{"File does not exist"}
+			throw FileNotFoundException("File does not exist")
+		}
+
 		val document = PDDocument.load(File(filePath))
 		val form = document.documentCatalog.acroForm
 
@@ -77,6 +84,14 @@ class MainViewModel : ViewModel(){
 	fun readWordKeys(it: String) {
 		Logger.d{"Reading Word keys"}
 		TODO("Not yet implemented")
+	}
+
+	fun setInputPdfPath(s: String) {
+		_uiState.value = _uiState.value.copy(inputPdfPath = s)
+	}
+
+	fun setInputWordPath(s: String) {
+		_uiState.value = _uiState.value.copy(inputWordPath = s)
 	}
 
 }
