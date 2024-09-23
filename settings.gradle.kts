@@ -1,6 +1,7 @@
 pluginManagement {
     repositories {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        maven ("https://repository.aspose.com/repo/")
         google()
         gradlePluginPortal()
         mavenCentral()

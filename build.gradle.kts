@@ -3,8 +3,9 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 plugins {
     kotlin("jvm")
     id("org.jetbrains.compose")
-    id("org.jetbrains.kotlin.plugin.compose")
+    id("org.jetbrains.kotlin.plugin.compose") 
 }
+
 
 group = "com.example"
 version = "1.0-SNAPSHOT"
@@ -33,4 +34,17 @@ compose.desktop {
             packageVersion = "1.0.0"
         }
     }
+    dependencies{
+        implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0") 
+        implementation("co.touchlab:kermit:2.0.4")
+        implementation("org.apache.pdfbox:pdfbox:2.0.27")
+        implementation("com.darkrockstudios:mpfilepicker:3.1.0")
+        implementation("org.apache.poi:poi:5.2.3")
+        implementation("org.apache.poi:poi-ooxml:5.2.3")
+        implementation("org.apache.poi:poi-scratchpad:5.2.3")
+        implementation(compose.materialIconsExtended)
+//        implementation("org.jetbrains.compose.material:material-icons-extended:1.6.8")
+    }
 }
+
+
