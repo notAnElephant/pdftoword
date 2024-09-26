@@ -32,6 +32,12 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "pdftoword2"
             packageVersion = "1.0.0"
+
+            windows{
+                includeAllModules = true
+            }
+
+            appResourcesRootDir.set(project.layout.projectDirectory.dir("resources"))
         }
     }
     dependencies{
