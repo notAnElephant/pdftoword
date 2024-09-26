@@ -39,11 +39,11 @@ compose.desktop {
         implementation("co.touchlab:kermit:2.0.4")
         implementation("org.apache.pdfbox:pdfbox:2.0.27")
         implementation("com.darkrockstudios:mpfilepicker:3.1.0")
-        implementation("org.apache.poi:poi:5.2.3")
-        implementation("org.apache.poi:poi-ooxml:5.2.3")
-        implementation("org.apache.poi:poi-scratchpad:5.2.3")
+        implementation("org.docx4j:docx4j-JAXB-MOXy:11.5.0")
         implementation(compose.materialIconsExtended)
-//        implementation("org.jetbrains.compose.material:material-icons-extended:1.6.8")
+        implementation("org.jetbrains.compose.material:material-icons-extended:1.6.8")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.6.4")
     }
 }
 
